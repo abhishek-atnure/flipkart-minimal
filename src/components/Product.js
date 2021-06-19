@@ -1,7 +1,6 @@
 import React from "react";
 
 function Product(product) {
-  console.log(product.product);
   return (
     <div className="product">
       <img src={product.product.img_url} alt={product.product.name} />

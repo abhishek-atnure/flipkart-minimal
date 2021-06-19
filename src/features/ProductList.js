@@ -44,7 +44,7 @@ export default function ProductList(allProductsData) {
       }
     };
     setAllProductList(selectFilteredAllProducts());
-  }, [price, brand, idealFor, sizeOfProduct]);
+  }, [price, brand, idealFor, sizeOfProduct, allProductsData.allProductsData]);
 
   return (
     <div className="main">
