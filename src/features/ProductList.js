@@ -16,37 +16,35 @@ export default function ProductList(allProductsData) {
   };
 
   useEffect(() => {
+    const selectFilteredAllProducts = () => {
+      const allProducts = allProductsData.allProductsData;
+
+      const brandArray = allProducts.filter((product) =>
+        product.brand.toString().includes(brand)
+      );
+
+      const genderArray = brandArray.filter((product) =>
+        product.ideal_for.toLowerCase().includes(idealFor)
+      );
+
+      const finalData = genderArray.filter((product) =>
+        product.size.toLowerCase().includes(sizeOfProduct)
+      );
+
+      if (price === "") {
+        return finalData;
+      } else if (price === "Lowest") {
+        return finalData.sort(function (a, b) {
+          return a.price - b.price;
+        });
+      } else if (price === "Highest") {
+        return finalData.sort(function (a, b) {
+          return b.price - a.price;
+        });
+      }
+    };
     setAllProductList(selectFilteredAllProducts());
   }, [price, brand, idealFor, sizeOfProduct]);
-
-  const selectFilteredAllProducts = () => {
-    const allProducts = allProductsData.allProductsData;
-
-    const brandArray = allProducts.filter((product) =>
-      product.brand.toString().includes(brand)
-    );
-
-    const genderArray = brandArray.filter((product) =>
-      product.ideal_for.toLowerCase().includes(idealFor)
-    );
-
-    const finalData = genderArray.filter((product) =>
-      product.size.toLowerCase().includes(sizeOfProduct)
-    );
-
-    if (price === "") {
-      return finalData;
-    } else if (price === "Lowest") {
-      return finalData.sort(function (a, b) {
-        return a.price - b.price;
-      });
-    } else if (price === "Highest") {
-      return finalData.sort(function (a, b) {
-        return b.price - a.price;
-      });
-    }
-  };
-  console.log(selectFilteredAllProducts());
 
   return (
     <div className="main">
