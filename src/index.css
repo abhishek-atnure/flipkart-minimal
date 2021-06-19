@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap");
+
 body {
   background: #dbdbdb;
-  font-family: "Inconsolata", monospace;
+  font-family: "Lato", sans-serif;
 }
 
 input {
@@ -12,7 +14,7 @@ nav {
   padding: 10px;
   position: sticky;
   top: 0;
-  margin-bottom: 20px;
+  /* margin-bottom: 15px; */
   color: white;
   font-size: 22px;
   font-weight: 600;
@@ -28,6 +30,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 10px 0;
 }
 
 .product {
@@ -57,10 +60,48 @@ h4 {
 
 .product-container img {
   height: 350px;
-  width: 300px;
+  width: 100%;
   border: 1px solid black;
 }
 
-.main .filter-container {
+.filter-elements {
+  width: 100%;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: white;
+  padding-bottom: 10px;
+}
+
+.main inputs,
+select {
+  padding: 10px;
+  background: white;
+  margin: 15px;
+  flex-grow: 2;
+  flex-shrink: 2;
+}
+
+.single-sort-container {
+  margin: auto;
+}
+.sort-container {
+  display: flex;
+}
+
+#clearAll {
+  color: blue;
+  text-decoration: underline;
+}
+
+#size-tag {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter-elements {
+    display: flex;
+    flex-direction: column;
+  }
 }
