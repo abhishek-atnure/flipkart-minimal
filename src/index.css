@@ -83,11 +83,13 @@ select {
   flex-shrink: 2;
 }
 
-.single-sort-container {
-  margin: auto;
-}
 .sort-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: white;
+  width: 100%;
 }
 
 #clearAll {

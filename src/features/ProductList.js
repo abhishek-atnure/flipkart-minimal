@@ -50,6 +50,76 @@ export default function ProductList(allProductsData) {
     <div className="main">
       <div className="filter-elements">
         <div className="sortby-cont">
+          <span id="size-tag">Size : </span>
+          <label htmlFor="m">M</label>
+          <input
+            id="m"
+            type="checkbox"
+            value="M"
+            onChange={(e) => setSizeOfProduct(e.target.value)}
+            checked={sizeOfProduct === "M"}
+          ></input>
+          <label htmlFor="s">S</label>
+          <input
+            id="s"
+            type="checkbox"
+            value="S"
+            onChange={(e) => setSizeOfProduct(e.target.value)}
+            checked={sizeOfProduct === "S"}
+          ></input>
+          <label htmlFor="l">L</label>
+          <input
+            id="l"
+            type="checkbox"
+            value="L"
+            onChange={(e) => setSizeOfProduct(e.target.value)}
+            checked={sizeOfProduct === "L"}
+          ></input>
+        </div>
+      </div>
+
+      <div className="sort-container">
+        <div className="single-sort-container">
+          <select
+            className="sort-btns"
+            onChange={(e) => setBrand(e.currentTarget.value)}
+          >
+            <option value="" key="1">
+              Brand
+            </option>
+            <option value="nike" key="2">
+              Nike
+            </option>
+            <option value="Reebok" key="3">
+              Reebok
+            </option>
+            <option value="noBrand" key="4">
+              Nobrand
+            </option>
+            <option value="Adidas" key="5">
+              Adidas
+            </option>
+          </select>
+        </div>
+
+        <div className="single-sort-container">
+          <select
+            className="sort-btns"
+            onChange={(e) => setIdealFor(e.target.value)}
+          >
+            <option value="" key="1">
+              Ideal for
+            </option>
+            <option value="man" key="2">
+              Men
+            </option>
+            <option value="women" key="3">
+              Women
+            </option>
+          </select>
+        </div>
+
+        <div className="single-sort-container">
           <select
             className="sort-btns"
             onChange={(e) => setPrice(e.currentTarget.value)}
@@ -64,76 +134,6 @@ export default function ProductList(allProductsData) {
               Highest - Lowest
             </option>
           </select>
-        </div>
-
-        <div className="sort-container">
-          <div className="single-sort-container">
-            <select
-              className="sort-btns"
-              onChange={(e) => setBrand(e.currentTarget.value)}
-            >
-              <option value="" key="1">
-                Brand
-              </option>
-              <option value="nike" key="2">
-                Nike
-              </option>
-              <option value="Reebok" key="3">
-                Reebok
-              </option>
-              <option value="noBrand" key="4">
-                Nobrand
-              </option>
-              <option value="Adidas" key="5">
-                Adidas
-              </option>
-            </select>
-          </div>
-
-          <div className="single-sort-container">
-            <select
-              className="sort-btns"
-              onChange={(e) => setIdealFor(e.target.value)}
-            >
-              <option value="" key="1">
-                Ideal for
-              </option>
-              <option value="man" key="2">
-                Men
-              </option>
-              <option value="women" key="3">
-                Women
-              </option>
-            </select>
-          </div>
-
-          <div className="single-sort-container">
-            <span id="size-tag">Size : </span>
-            <label htmlFor="m">M</label>
-            <input
-              id="m"
-              type="checkbox"
-              value="M"
-              onChange={(e) => setSizeOfProduct(e.target.value)}
-              checked={sizeOfProduct === "M"}
-            ></input>
-            <label htmlFor="s">S</label>
-            <input
-              id="s"
-              type="checkbox"
-              value="S"
-              onChange={(e) => setSizeOfProduct(e.target.value)}
-              checked={sizeOfProduct === "S"}
-            ></input>
-            <label htmlFor="l">L</label>
-            <input
-              id="l"
-              type="checkbox"
-              value="L"
-              onChange={(e) => setSizeOfProduct(e.target.value)}
-              checked={sizeOfProduct === "L"}
-            ></input>
-          </div>
         </div>
         <a onClick={handleReset} id="clearAll">
           Clear all
