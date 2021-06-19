@@ -1,6 +1,5 @@
 import React from "react";
-import Filter from "./components/Filter";
-import SortBy from "./components/SortBy";
+
 import ProductList from "./features/ProductList";
 import allProductsData from "./productData";
 
