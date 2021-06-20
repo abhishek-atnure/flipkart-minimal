@@ -135,9 +135,9 @@ export default function ProductList(allProductsData) {
             </option>
           </select>
         </div>
-        <a onClick={handleReset} id="clearAll">
+        <span onClick={handleReset} id="clearAll">
           Clear all
-        </a>
+        </span>
       </div>
 
       <div className="product-container">
